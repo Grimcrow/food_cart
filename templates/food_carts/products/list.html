@@ -1,0 +1,28 @@
+{% extends "food_carts/base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    {% if category %} {{ category.name }} {% else %}Product{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+         <div id="food_slideshow">
+
+         </div>
+         <h1 id="title">{% if category %}{{ category.name }}{% else %}<p>All Foods and Beverages</p>{% endif %}</h1></br>
+        {% for product in products %}
+         <div id="main">
+            <div class="col-md-3 col-sm-6">
+                <div>
+                    <a class="product_img" href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="250" height="150"> </a>
+                    </br>
+                    <a href="{{ product.get_absolute_url }}"><h3>{{ product.name }}</h3></a></br>
+                    <h4>Ksh{{ product.price }}</h4>
+                </div>
+            </div>
+         </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
