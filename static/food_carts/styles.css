@@ -42,10 +42,13 @@ h1, h2{
 
 .order_list{
     text-align: left;
-    background-color: #acced4;
 }
 
-.order_list p{
-    font-size: 50px;
-    font-weight: 400;
+.order_list h2{
+    font-family: Arial;
+    font-size: 20px;
+
+}
+.checkout{
+    margin-left: 25%;
 }
