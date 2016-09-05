@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title %}
-    {% if category %} {{ category.name }} {% else %}Product{% endif %}
+    {% if category %} {{ category.name }} {% else %}Food Cart{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -17,8 +17,8 @@
                 <div>
                     <a class="product_img" href="{{ product.get_absolute_url }}"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="250" height="150"> </a>
                     </br>
-                    <a href="{{ product.get_absolute_url }}"><h3>{{ product.name }}</h3></a></br>
-                    <h4>Ksh{{ product.price }}</h4>
+                    <a href="{{ product.get_absolute_url }}"><h3>{{ product.name }}</h3></a>
+                    <h4>Ksh{{ product.price }}</h4></br></br>
                 </div>
             </div>
          </div>
